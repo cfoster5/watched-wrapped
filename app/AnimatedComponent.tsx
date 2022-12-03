@@ -19,7 +19,7 @@ const draw = {
 
 const Bar = ({ color, position, width, text }) => (
   <motion.div
-    className={`h-10 whitespace-nowrap rounded-r-lg bg-[${color}]`}
+    className={`h-10 whitespace-nowrap rounded-r-lg ${color}`}
     variants={draw}
     initial="hidden"
     animate="visible"
@@ -51,7 +51,13 @@ export const AnimatedComponent = ({ movies }) => {
   const genreDict = composeArray(genreMap);
   const sortedGenreDict = genreDict.sort((a, b) => b.value - a.value);
 
-  const colors = ["#845EC2", "#D65DB1", "#FF6F91", "#FF9671", "#FFC75F"];
+  const colors = [
+    "bg-[#845EC2]",
+    "bg-[#D65DB1]",
+    "bg-[#FF6F91]",
+    "bg-[#FF9671]",
+    "bg-[#FFC75F]",
+  ];
 
   return (
     <AnimatePresence mode="wait">
