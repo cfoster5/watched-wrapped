@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { History } from "../types";
+import { History } from "../../../types";
 
 const draw = {
   hidden: { width: 0, opacity: 0 },
@@ -36,7 +36,7 @@ const Bar = ({ color, position, width, text }) => (
 const composeArray = (map) =>
   [...map].map(([name, value]) => ({ name, value }));
 
-export const AnimatedComponent = ({ movies }: { movies: History[] }) => {
+export const AnimatedGenres = ({ movies }: { movies: History[] }) => {
   const [isVisible, setIsVisible] = useState(false);
   const router = useRouter();
   useEffect(() => {
