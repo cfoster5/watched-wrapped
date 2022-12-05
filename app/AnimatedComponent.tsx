@@ -1,6 +1,8 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { History } from "../types";
 
 const draw = {
   hidden: { width: 0, opacity: 0 },
@@ -25,17 +27,21 @@ const Bar = ({ color, position, width, text }) => (
     animate="visible"
     custom={{ position, width }}
   >
-    <p className="ml-4 flex h-full items-center capitalize">{text}</p>
+    <p className="ml-4 flex h-full items-center capitalize text-white">
+      {text}
+    </p>
   </motion.div>
 );
 
 const composeArray = (map) =>
   [...map].map(([name, value]) => ({ name, value }));
 
-export const AnimatedComponent = ({ movies }) => {
+export const AnimatedComponent = ({ movies }: { movies: History[] }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const router = useRouter();
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 3500);
+    // setTimeout(() => router.push("/xp/runtime"), 10000);
   }, []);
 
   const genres = movies.map((movie) => movie.movie.genres).flat();
