@@ -6,16 +6,15 @@ import { History } from "../../types";
 const cardVariants = {
   initial: {
     opacity: 0,
-    x: 0,
     rotate: -10,
   },
   final: (custom) => {
     const delay = custom * 0.35;
     return {
       opacity: 1,
-      // x: 900 - 100 * custom,
+      x: 900 - 100 * custom,
       // x: `calc(100% - 100px * ${custom})`,
-      x: `calc(100%)`,
+      // x: `calc(100%)`,
       rotate: 0,
       transition: {
         x: { delay, type: "spring", bounce: 0.4, duration: 0.8 },
@@ -68,8 +67,9 @@ export const AnimatedMovies = ({ movies }) => {
           >
             Your movies
           </motion.p>
-          <div className="relative flex">
-            <div className="flex-1">
+          {/* <div className="w-full flex-1 bg-yellow-400"></div> */}
+          <div className="flex-1">
+            <div className="relative flex">
               {[...movies].reverse().map((movie, i) => (
                 <AnimatedPoster key={movie.id} movie={movie} position={i} />
               ))}
