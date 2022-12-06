@@ -21,15 +21,13 @@ const draw = {
 
 const Bar = ({ color, position, width, text }) => (
   <motion.div
-    className={`h-10 whitespace-nowrap rounded-r-lg ${color}`}
+    className={`flex h-1/5 items-center whitespace-nowrap rounded-r-lg ${color}`}
     variants={draw}
     initial="hidden"
     animate="visible"
     custom={{ position, width }}
   >
-    <p className="ml-4 flex h-full items-center capitalize text-white">
-      {text}
-    </p>
+    <p className="ml-2 capitalize text-white">{text}</p>
   </motion.div>
 );
 
@@ -41,7 +39,7 @@ export const AnimatedGenres = ({ movies }: { movies: History[] }) => {
   const router = useRouter();
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 3500);
-    // setTimeout(() => router.push("/xp/runtime"), 10000);
+    setTimeout(() => router.push("/xp/runtime"), 10000);
   }, []);
 
   const genres = movies.map((movie) => movie.movie.genres).flat();
@@ -78,23 +76,6 @@ export const AnimatedGenres = ({ movies }: { movies: History[] }) => {
           In 2022, you explored {uniqueGenres.length} different genres
         </motion.p>
       ) : (
-        //     <motion.p
-        //       className="mb-2 flex-1 self-center text-2xl text-[#F9F871]"
-        //       initial={{ opacity: 0 }}
-        //       animate={{ opacity: 1 }}
-        //       exit={{ opacity: 0 }}
-        //     >
-        //       Your top genres
-        //     </motion.p>
-        //   )}
-        // </AnimatePresence>
-        // <div className="flex-1">
-        //   <Bar color="#845EC2" position={0} width={1} text="Action" />
-        //   <Bar color="#D65DB1" position={1} width={0.75} text="Adventure" />
-        //   <Bar color="#FF6F91" position={2} width={0.5} text="Science Fiction" />
-        //   <Bar color="#FF9671" position={3} width={0.35} text="Thriller" />
-        //   <Bar color="#FFC75F" position={4} width={0.2} text="Superhero" />
-        // </div>
         <>
           <motion.p
             key="second"
@@ -105,7 +86,7 @@ export const AnimatedGenres = ({ movies }: { movies: History[] }) => {
           >
             Your top genres
           </motion.p>
-          <div className="flex-1">
+          <div className="aspect-square flex-1">
             {sortedGenreDict.slice(0, 5).map((genre, i) => (
               <Bar
                 key={i}
