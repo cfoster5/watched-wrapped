@@ -34,7 +34,7 @@ export default function RootLayout({
           </div>
           {/* Use flex: 0 0 auto to fill remaining height */}
           {/* Shifting up slightly from center */}
-          <div className="flex- relative top-[-5%] flex-initial flex-shrink-0">
+          <div className="relative top-[-5%] flex-initial flex-shrink-0">
             <AuthContext>{children}</AuthContext>
           </div>
           {/* Use flex: 1 0 auto to size to content */}
