@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { History } from "../../../types";
 import useMeasure from "./useMeasure";
+import { useRouter } from "next/navigation";
 
 const marqueeVariants = {
   animate: {
@@ -35,9 +36,11 @@ const marquee = {
 
 export const AnimatedRuntime = ({ movies }: { movies: History[] }) => {
   const [ref, { x, y, width, height, top, right, bottom, left }] = useMeasure();
+  const router = useRouter();
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 3500);
+    // setTimeout(() => router.push("/"), 10000);
   }, []);
 
   const colors = [
@@ -55,7 +58,7 @@ export const AnimatedRuntime = ({ movies }: { movies: History[] }) => {
       {!isVisible ? (
         <motion.p
           key="first"
-          className="mb-2 flex-1 self-center text-center text-2xl text-[#F9F871]"
+          className="flex-1 self-center text-center text-2xl text-[#F9F871]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -71,7 +74,7 @@ export const AnimatedRuntime = ({ movies }: { movies: History[] }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            Your total play time was {runtime} minutes
+            Your total watchtime was {runtime} minutes
           </motion.p>
           <div className="flex-1">
             {/* <motion.div className="aspect-square w-full bg-slate-500">

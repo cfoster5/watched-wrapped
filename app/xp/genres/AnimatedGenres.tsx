@@ -70,7 +70,7 @@ export const AnimatedGenres = ({ movies }: { movies: History[] }) => {
       {!isVisible ? (
         <motion.p
           key="first"
-          className="mb-2 flex-1 self-center text-center text-2xl text-[#F9F871]"
+          className="flex-1 self-center text-center text-2xl text-[#F9F871]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
