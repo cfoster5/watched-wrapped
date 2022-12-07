@@ -27,19 +27,19 @@ export default function RootLayout({
       */}
       <head />
       <body className="m-0 h-full">
-        <div className="flex h-full flex-col">
-          <div className="m-8 mt-4 flex flex-auto flex-shrink-0 flex-row justify-between">
+        <div className="flex h-full flex-col justify-between">
+          <header className="m-8 mt-4 flex-initial flex-shrink-0">
             <h1 className="text-xl">Watch Wrapped</h1>
             {/* <Link href="/">Experience</Link> */}
-          </div>
+          </header>
           {/* Use flex: 0 0 auto to fill remaining height */}
           {/* Shifting up slightly from center */}
           <div className="relative top-[-5%] flex-initial flex-shrink-0">
             <AuthContext>{children}</AuthContext>
           </div>
           {/* Use flex: 1 0 auto to size to content */}
-          <div className="m-8 mb-4 flex flex-auto flex-shrink-0 items-end text-white opacity-25">
-            <div className="flex items-center">
+          <footer className="m-8 mb-4 flex-initial text-white opacity-25">
+            {/* <div className="flex items-center">
               Powered by
               <Image
                 src={trakt}
@@ -48,8 +48,9 @@ export default function RootLayout({
                 height={98 / 4}
                 className="ml-2"
               />
-            </div>
-          </div>
+            </div> */}
+            Attributions
+          </footer>
         </div>
       </body>
     </html>
