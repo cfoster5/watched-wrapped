@@ -1,9 +1,9 @@
 "use client";
+import useMeasure from "@/hooks/useMeasure";
+import { History } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { History } from "../../../types";
-import useMeasure from "./useMeasure";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const marqueeVariants = {
   animate: {

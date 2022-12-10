@@ -1,8 +1,7 @@
 "use client";
+import useMeasure from "@/hooks/useMeasure";
 import { AnimatePresence, motion, Variants } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useState } from "react";
-import useMeasure from "../runtime/useMeasure";
 
 const posterVariants: Variants = {
   hidden: { opacity: 0 },

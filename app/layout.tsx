@@ -1,9 +1,8 @@
 import Link from "next/link";
-import AuthContext from "./AuthContext";
 import "./globals.css";
 import { Inter } from "@next/font/google";
 import Image from "next/image";
-import trakt from "../public/trakt-wide-white.svg";
+import trakt from "@/public/trakt-wide-white.svg";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +34,7 @@ export default function RootLayout({
           {/* Use flex: 0 0 auto to fill remaining height */}
           {/* Shifting up slightly from center */}
           <div className="relative top-[-5%] flex-initial flex-shrink-0">
-            <AuthContext>{children}</AuthContext>
+            {children}
           </div>
           {/* Use flex: 1 0 auto to size to content */}
           <footer className="m-8 mb-4 flex-initial text-white opacity-25">

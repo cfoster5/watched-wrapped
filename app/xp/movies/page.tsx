@@ -1,5 +1,5 @@
-import { History } from "../../../types";
-import { getMovieHistories } from "../../api/getMovieHistories";
+import { getMovieHistories } from "@/api/getMovieHistories";
+import { History } from "@/types";
 import { AnimatedMovies } from "./AnimatedMovies";
 
 async function getMovies(movieHistories: History[]) {

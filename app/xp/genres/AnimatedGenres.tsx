@@ -1,8 +1,8 @@
 "use client";
+import { History } from "@/types";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { History } from "../../../types";
 
 const draw = {
   hidden: { width: 0, opacity: 0 },
