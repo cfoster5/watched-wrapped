@@ -1,6 +1,5 @@
 import NextAuth from "next-auth";
 import TraktProvider from "next-auth/providers/trakt";
-import { decode } from "next-auth/jwt";
 
 export const authOptions = {
   providers: [
@@ -10,11 +9,6 @@ export const authOptions = {
       clientSecret: process.env.TRAKT_SECRET,
     }),
   ],
-  callbacks: {
-    session: async ({ session, user }) => {
-      return session;
-    },
-  },
 };
 
 export default NextAuth(authOptions);
